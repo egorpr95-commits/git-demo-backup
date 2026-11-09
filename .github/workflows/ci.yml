@@ -19,8 +19,11 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y shellcheck
 
+      - name: Verify ShellCheck installation
+        run: shellcheck --version
+
       - name: Check Bash syntax
-        run: bash -n check_logs.sh
+        run: bash -n ./check_logs.sh
 
       - name: Run ShellCheck
-        run: shellcheck check_logs.sh
+        run: shellcheck ./check_logs.sh
